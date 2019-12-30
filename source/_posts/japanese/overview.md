@@ -82,6 +82,7 @@ PRONOUN → {% ruby これ|this %} | {% ruby それ|(near) that %} | {% ruby あ
 THING → OBJECT | OBJECT の (OBJECT)
 NOUN → WOMAN | MAN | THING | PRONOUN
 
+
 ### Declarative
 
 * DECLARATIVE →
@@ -112,10 +113,10 @@ See [this post](https://zhuanlan.zhihu.com/p/67570558).
 {% ruby どうぞ|please %}、{% ruby よろしく|nice to meet you %}　{% ruby お願いします|please %}
 
 
-
-
+{% ruby ええ|yes %} {% ruby はい|yes %}
 
 [Prefix お and ご](http://selftaughtjapanese.com/2014/03/21/japanese-honorific-prefixes-お-and-ご-o-and-go/)
 
 [Pronounciation of はへを](https://japanese.stackexchange.com/questions/379/why-are-the-particles-は-ha⇒wa-へ-he⇒e-and-を-wo⇒o-not-spelled-phonet)
 
+TODO: Work in progress
