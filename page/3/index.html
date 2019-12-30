@@ -96,35 +96,43 @@
   <header>
     
   
-    <h1 class="title"><a href="/2016/10/12/php/php-form-handling/">PHP Form Handling</a></h1>
+    <h1 class="title"><a href="/2016/10/11/points set/points-of-sql/">Points of SQL</a></h1>
   
 
-    <time class="dt-published" datetime="2016-10-12T00:00:00.000Z">
-  <span class="day">12</span><span class="month">Oct</span>
+    <time class="dt-published" datetime="2016-10-11T00:00:00.000Z">
+  <span class="day">11</span><span class="month">Oct</span>
 </time>
   </header>
   <div class="e-content entry-content">
     
-      <h2 id="Get-Form-Data"><a href="#Get-Form-Data" class="headerlink" title="Get Form Data"></a>Get Form Data</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$_GET[<span class="string">"field"</span>]</span><br><span class="line">$_POST[<span class="string">"field"</span>]</span><br></pre></td></tr></table></figure>
+      <h2 id="Schema-Operations"><a href="#Schema-Operations" class="headerlink" title="Schema Operations"></a>Schema Operations</h2><h3 id="Constraint"><a href="#Constraint" class="headerlink" title="Constraint"></a>Constraint</h3><ul>
+<li><strong>NOT NULL</strong></li>
+<li><strong>UNIQUE</strong></li>
+<li><strong>PRIMARY KEY</strong></li>
+<li><strong>FOREIGN KEY</strong></li>
+<li><strong>CHECK</strong> - Ensures that the value in a column meets a specific condition</li>
+<li><strong>DEFAULT</strong> - Specifies a default value for a column</li>
+</ul>
+<h3 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE dbname</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE table_name</span><br><span class="line">(</span><br><span class="line">column_name1 data_type(size),</span><br><span class="line">column_name2 data_type(size),</span><br><span class="line">column_name3 data_type(size),</span><br><span class="line">....</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
-<h2 id="Validation"><a href="#Validation" class="headerlink" title="Validation"></a>Validation</h2><h3 id="Not-empty"><a href="#Not-empty" class="headerlink" title="Not empty"></a>Not empty</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">"field"</span>])) &#123;</span><br><span class="line">  $err = <span class="string">"Field is required"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Alter"><a href="#Alter" class="headerlink" title="Alter"></a>Alter</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE table_name</span><br><span class="line">ADD column_name datatype</span><br><span class="line">ALTER COLUMN column_name datatype</span><br><span class="line">DROP COLUMN column_name</span><br></pre></td></tr></table></figure>
 
-<h3 id="Letters-and-white-space-only"><a href="#Letters-and-white-space-only" class="headerlink" title="Letters and white space only"></a>Letters and white space only</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!preg_match(<span class="string">"/^[a-zA-Z ]*$/"</span>,$field)) &#123;</span><br><span class="line">  $err = <span class="string">"Only letters and white space allowed"</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Create-1"><a href="#Create-1" class="headerlink" title="Create"></a>Create</h2><h2 id="Read"><a href="#Read" class="headerlink" title="Read"></a>Read</h2><h3 id="WHERE"><a href="#WHERE" class="headerlink" title="WHERE"></a>WHERE</h3><h3 id="GROUP-BY"><a href="#GROUP-BY" class="headerlink" title="GROUP BY"></a>GROUP BY</h3><p>Provide filters for aggregate function, make aggregate function work for some keys instead of the whole table.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name, aggregate_function(column_name)</span><br><span class="line">FROM table_name</span><br><span class="line">GROUP BY column_name;</span><br></pre></td></tr></table></figure>
 
-<h3 id="E-mail-address"><a href="#E-mail-address" class="headerlink" title="E-mail address"></a>E-mail address</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!filter_var($email, FILTER_VALIDATE_EMAIL)) &#123;</span><br><span class="line">  $err = <span class="string">"Invalid email format"</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Url"><a href="#Url" class="headerlink" title="Url"></a>Url</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!preg_match(<span class="string">"/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&amp;@#\/%?=~_|!:,.;]*[-a-z0-9+&amp;@#\/%=~_|]/i"</span>,$url)) &#123;</span><br><span class="line">  $err = <span class="string">"Invalid URL"</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="HAVING"><a href="#HAVING" class="headerlink" title="HAVING"></a>HAVING</h3><h3 id="ORDER-BY"><a href="#ORDER-BY" class="headerlink" title="ORDER BY"></a>ORDER BY</h3><h3 id="Aggregate-Functions"><a href="#Aggregate-Functions" class="headerlink" title="Aggregate Functions"></a>Aggregate Functions</h3><h2 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h2><h2 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h2><h2 id="Joining-Tables"><a href="#Joining-Tables" class="headerlink" title="Joining Tables"></a>Joining Tables</h2><h3 id="INNER-JOIN"><a href="#INNER-JOIN" class="headerlink" title="INNER JOIN"></a>INNER JOIN</h3><p>Join only on common values</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM table1 INNER JOIN table2</span><br><span class="line">    ON table1.pk &#x3D; table2.fk</span><br></pre></td></tr></table></figure>
     
     
     <footer class="meta">
       
   <div class="cats">
-<a href="/categories/PHP/">PHP</a></div>
+<a href="/categories/Points-Set/">Points-Set</a></div>
 
       
   <div class="tags">
-<a href="/tags/php/">php</a><a href="/tags/form-handling/">form handling</a></div>
+<a href="/tags/points-set/">points-set</a><a href="/tags/database/">database</a><a href="/tags/sql/">sql</a></div>
 
       
     </footer>
@@ -1523,69 +1531,6 @@
   <header>
     
   
-    <h1 class="title"><a href="/2016/10/11/points set/points-of-sql/">Points of SQL</a></h1>
-  
-
-    <time class="dt-published" datetime="2016-10-11T00:00:00.000Z">
-  <span class="day">11</span><span class="month">Oct</span>
-</time>
-  </header>
-  <div class="e-content entry-content">
-    
-      <h2 id="Schema-Operations"><a href="#Schema-Operations" class="headerlink" title="Schema Operations"></a>Schema Operations</h2><h3 id="Constraint"><a href="#Constraint" class="headerlink" title="Constraint"></a>Constraint</h3><ul>
-<li><strong>NOT NULL</strong></li>
-<li><strong>UNIQUE</strong></li>
-<li><strong>PRIMARY KEY</strong></li>
-<li><strong>FOREIGN KEY</strong></li>
-<li><strong>CHECK</strong> - Ensures that the value in a column meets a specific condition</li>
-<li><strong>DEFAULT</strong> - Specifies a default value for a column</li>
-</ul>
-<h3 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE dbname</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE table_name</span><br><span class="line">(</span><br><span class="line">column_name1 data_type(size),</span><br><span class="line">column_name2 data_type(size),</span><br><span class="line">column_name3 data_type(size),</span><br><span class="line">....</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h3 id="Alter"><a href="#Alter" class="headerlink" title="Alter"></a>Alter</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE table_name</span><br><span class="line">ADD column_name datatype</span><br><span class="line">ALTER COLUMN column_name datatype</span><br><span class="line">DROP COLUMN column_name</span><br></pre></td></tr></table></figure>
-
-<h2 id="Create-1"><a href="#Create-1" class="headerlink" title="Create"></a>Create</h2><h2 id="Read"><a href="#Read" class="headerlink" title="Read"></a>Read</h2><h3 id="WHERE"><a href="#WHERE" class="headerlink" title="WHERE"></a>WHERE</h3><h3 id="GROUP-BY"><a href="#GROUP-BY" class="headerlink" title="GROUP BY"></a>GROUP BY</h3><p>Provide filters for aggregate function, make aggregate function work for some keys instead of the whole table.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name, aggregate_function(column_name)</span><br><span class="line">FROM table_name</span><br><span class="line">GROUP BY column_name;</span><br></pre></td></tr></table></figure>
-
-<h3 id="HAVING"><a href="#HAVING" class="headerlink" title="HAVING"></a>HAVING</h3><h3 id="ORDER-BY"><a href="#ORDER-BY" class="headerlink" title="ORDER BY"></a>ORDER BY</h3><h3 id="Aggregate-Functions"><a href="#Aggregate-Functions" class="headerlink" title="Aggregate Functions"></a>Aggregate Functions</h3><h2 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h2><h2 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h2><h2 id="Joining-Tables"><a href="#Joining-Tables" class="headerlink" title="Joining Tables"></a>Joining Tables</h2><h3 id="INNER-JOIN"><a href="#INNER-JOIN" class="headerlink" title="INNER JOIN"></a>INNER JOIN</h3><p>Join only on common values</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM table1 INNER JOIN table2</span><br><span class="line">    ON table1.pk &#x3D; table2.fk</span><br></pre></td></tr></table></figure>
-    
-    
-    <footer class="meta">
-      
-  <div class="cats">
-<a href="/categories/Points-Set/">Points-Set</a></div>
-
-      
-  <div class="tags">
-<a href="/tags/points-set/">points-set</a><a href="/tags/database/">database</a><a href="/tags/sql/">sql</a></div>
-
-      
-    </footer>
-    
-  </div>
-  
-</article>
-
-
-  <article class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <header>
-    
-  
     <h1 class="title"><a href="/2016/07/06/life/zjyb-videos/">终极一班-班级视频</a></h1>
   
 
@@ -2254,6 +2199,58 @@
       
   <div class="tags">
 <a href="/tags/english/">english</a><a href="/tags/sat/">sat</a><a href="/tags/critical-reading/">critical reading</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article>
+
+
+  <article class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="title"><a href="/2015/10/12/c/struct-in-c/">Struct in C</a></h1>
+  
+
+    <time class="dt-published" datetime="2015-10-12T00:00:00.000Z">
+  <span class="day">12</span><span class="month">Oct</span>
+</time>
+  </header>
+  <div class="e-content entry-content">
+    
+      <h2 id="Declaration"><a href="#Declaration" class="headerlink" title="Declaration"></a>Declaration</h2><p><code>struct</code> is keyword for struct</p>
+<h3 id="Generally"><a href="#Generally" class="headerlink" title="Generally"></a>Generally</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tag_name</span> &#123;</span></span><br><span class="line">	<span class="comment">// members</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>Note: Two of <code>tag_name</code>, <code>member-list</code> and <code>variable-list</code> must present.</p>
+<h3 id="Using-typedef"><a href="#Using-typedef" class="headerlink" title="Using typedef"></a>Using typedef</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">char</span> b;</span><br><span class="line">    <span class="keyword">double</span> c; </span><br><span class="line">&#125; Simple2;</span><br><span class="line"></span><br><span class="line"><span class="comment">//现在可以用Simple2作为类型声明新的结构体变量</span></span><br><span class="line">Simple2 u1, u2[<span class="number">20</span>], *u3;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">COMPLEX</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> <span class="built_in">string</span>[<span class="number">100</span>];</span><br><span class="line">    <span class="comment">// Other struct</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">SIMPLE</span> <span class="title">a</span>;</span></span><br><span class="line">    <span class="comment">// Pointer to itself</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">COMPLEX</span> *<span class="title">next_node</span>;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/C/">C</a></div>
+
+      
+  <div class="tags">
+<a href="/tags/c/">c</a><a href="/tags/struct/">struct</a></div>
 
       
     </footer>
