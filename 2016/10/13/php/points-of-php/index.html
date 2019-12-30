@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+<head>
+  <meta charset="utf-8">
+  
+  <title>Points of PHP | Larry&#39;s</title>
+  <meta name="author" content="Larry Li">
+
+  
+  <meta name="description" content="SyntaxPHP Code123&amp;lt;?php    ...?&amp;gt;
+Note All statements end with a semicolon ;Note Everything except variable names are NOT case sensitive.
+Comments">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="Larry&#39;s" type="application/atom+xml">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="p-name title" itemprop="headline name">Points of PHP</h1>
+  
+
+    <time class="dt-published" datetime="2016-10-13T00:00:00.000Z">
+  <span class="day">13</span><span class="month">Oct</span>
+</time>
+  </header>
+  <div class="e-content entry-content">
+    
+      <h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><h3 id="PHP-Code"><a href="#PHP-Code" class="headerlink" title="PHP Code"></a>PHP Code</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    ...</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>Note</strong> All statements end with a semicolon <code>;</code><br><strong>Note</strong> Everything except variable names are <strong>NOT</strong> case sensitive.</p>
+<h3 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h3><p><code>//</code> and <code>#</code> are used for single-line comment<br><code>/* ... */</code> can be used for multi-line comment</p>
+<h2 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h2><h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p><code>$variable_name = &quot;anything&quot;</code></p>
+<p><em>Note: PHP is a loosely typed language</em></p>
+<h3 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h3><ul>
+<li>local</li>
+<li>global</li>
+<li>static</li>
+</ul>
+<h3 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h3><p><code>global</code> keyword can be used to make variable global.<br><code>$GLOBALs[&#39;index&#39;]</code> can be used to access global variables.</p>
+<h3 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h3><p>Static variable is local. It won’t be deleted when function completed.<br><code>static</code> keyword can be used to make variable static.</p>
+<h2 id="Constant"><a href="#Constant" class="headerlink" title="Constant"></a>Constant</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">"SHI"</span>, <span class="string">"Hello world!"</span>[, case_insensitive = <span class="keyword">false</span>]);</span><br><span class="line"><span class="keyword">echo</span> SHI;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Data-Type"><a href="#Data-Type" class="headerlink" title="Data Type"></a>Data Type</h2><p><code>var_dump($x);</code> can be used to show the type of a variable.</p>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>Variables can be integrated directly into strings:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;h1&gt;$txt&lt;/h1&gt;"</span>;</span><br></pre></td></tr></table></figure>
+<p><em>Note: <code>echo</code> and <code>print</code> can be used with or without parentheses</em></p>
+<p><code>.</code> can be used to concatenate strings.<br><code>.=</code> to append.</p>
+<h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$a = <span class="keyword">array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">$a[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">$b = <span class="keyword">array</span>(<span class="string">"a"</span>=&gt;<span class="number">1</span>, <span class="string">"b"</span>=&gt;<span class="number">2</span>, <span class="string">"c"</span>=&gt;<span class="number">3</span>);</span><br><span class="line">$b[<span class="string">'a'</span>];</span><br><span class="line"><span class="keyword">foreach</span>($b <span class="keyword">as</span> $bi =&gt; $bi_value) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"Key="</span> . $bi . <span class="string">", Value="</span> . $bi_value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fu</span><span class="params">($a, $b=<span class="number">0</span>)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bi</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Bi</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;shi = <span class="string">"shi"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Create an object</span></span><br><span class="line">$b = <span class="keyword">new</span> Bi();</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $b-&gt;shi;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Condition-Statement"><a href="#Condition-Statement" class="headerlink" title="Condition Statement"></a>Condition Statement</h2><h3 id="If"><a href="#If" class="headerlink" title="If"></a>If</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>() &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">elseif</span>() &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">else</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (n) &#123;</span><br><span class="line">    <span class="keyword">case</span> label1:</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Loops"><a href="#Loops" class="headerlink" title="Loops"></a>Loops</h2><h3 id="While"><a href="#While" class="headerlink" title="While"></a>While</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>() &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">while</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="For"><a href="#For" class="headerlink" title="For"></a>For</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(...;...;...) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> ($i <span class="keyword">as</span> $arr) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Skills"><a href="#Skills" class="headerlink" title="Skills"></a>Skills</h2><h3 id="Redirection"><a href="#Redirection" class="headerlink" title="Redirection"></a>Redirection</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="string">"Location: "</span>.$url, <span class="keyword">true</span>, $permanent ? <span class="number">301</span> : <span class="number">302</span>);</span><br><span class="line"><span class="keyword">die</span>();</span><br></pre></td></tr></table></figure>
+
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/PHP/">PHP</a></div>
+
+      
+  <div class="tags">
+<a href="/tags/points-set/">points-set</a><a href="/tags/php/">php</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article>
+</div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+  
+  
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>
+  
+  &copy; 2019 Larry Li
+  
+</p>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+
+
+<script src="/js/gallery.js"></script>
+
+
+
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+<script>
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>

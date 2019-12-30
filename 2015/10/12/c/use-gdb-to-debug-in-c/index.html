@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+<head>
+  <meta charset="utf-8">
+  
+  <title>Use GDB to Debug in C | Larry&#39;s</title>
+  <meta name="author" content="Larry Li">
+
+  
+  <meta name="description" content="BasicTo begin, load the program:
+1&amp;gt; gbd [program name]
+
+or have core dumped:
+1&amp;gt; gdb [program name] [core file]
+
+Then set breakpoints(as follow) ">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="Larry&#39;s" type="application/atom+xml">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="p-name title" itemprop="headline name">Use GDB to Debug in C</h1>
+  
+
+    <time class="dt-published" datetime="2015-10-12T00:00:00.000Z">
+  <span class="day">12</span><span class="month">Oct</span>
+</time>
+  </header>
+  <div class="e-content entry-content">
+    
+      <h2 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h2><p>To begin, load the program:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; gbd [program name]</span><br></pre></td></tr></table></figure>
+
+<p>or have core dumped:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; gdb [program name] [core file]</span><br></pre></td></tr></table></figure>
+
+<p>Then <a href="#set-breakpoint">set breakpoints</a>(as follow) and run the program:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; run [parameters]</span><br></pre></td></tr></table></figure>
+
+<h2 id="Breakpoints"><a href="#Breakpoints" class="headerlink" title="Breakpoints"></a>Breakpoints</h2><h3 id="Set-Breakpoint"><a href="#Set-Breakpoint" class="headerlink" title="Set Breakpoint"></a>Set Breakpoint</h3><p>Two ways to set break points</p>
+<ul>
+<li>Set break point by function name:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">break</span> [<span class="keyword">function</span> name]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Set break point by line number:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">break</span> [line number]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Show-Breakpoints"><a href="#Show-Breakpoints" class="headerlink" title="Show Breakpoints"></a>Show Breakpoints</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ib</span><br></pre></td></tr></table></figure>
+
+<p>or</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; info breakpoint</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Delete-breakpoint"><a href="#Delete-breakpoint" class="headerlink" title="Delete breakpoint"></a>Delete breakpoint</h3><p>To delete all break points:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; delete</span><br></pre></td></tr></table></figure>
+
+<h2 id="Debug-in-Breakpoint"><a href="#Debug-in-Breakpoint" class="headerlink" title="Debug in Breakpoint"></a>Debug in Breakpoint</h2><h3 id="Print"><a href="#Print" class="headerlink" title="Print"></a>Print</h3><p>Usage:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">print</span>([variable])</span><br></pre></td></tr></table></figure>
+
+<h3 id="Next"><a href="#Next" class="headerlink" title="Next:"></a>Next:</h3><p>Usage:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; next</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; n</span><br></pre></td></tr></table></figure>
+
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/C/">C</a></div>
+
+      
+  <div class="tags">
+<a href="/tags/c/">c</a><a href="/tags/gdb/">gdb</a><a href="/tags/debug/">debug</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article>
+</div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+  
+  
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>
+  
+  &copy; 2019 Larry Li
+  
+</p>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+
+
+<script src="/js/gallery.js"></script>
+
+
+
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+<script>
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>

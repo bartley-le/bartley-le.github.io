@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+<head>
+  <meta charset="utf-8">
+  
+  <title>Struct in C | Larry&#39;s</title>
+  <meta name="author" content="Larry Li">
+
+  
+  <meta name="description" content="Declarationstruct is keyword for struct
+Generally123struct tag_name &amp;#123;	// members&amp;#125;;
+
+Note: Two of tag_name, member-list and variable-list mus">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="Larry&#39;s" type="application/atom+xml">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="p-name title" itemprop="headline name">Struct in C</h1>
+  
+
+    <time class="dt-published" datetime="2015-10-12T00:00:00.000Z">
+  <span class="day">12</span><span class="month">Oct</span>
+</time>
+  </header>
+  <div class="e-content entry-content">
+    
+      <h2 id="Declaration"><a href="#Declaration" class="headerlink" title="Declaration"></a>Declaration</h2><p><code>struct</code> is keyword for struct</p>
+<h3 id="Generally"><a href="#Generally" class="headerlink" title="Generally"></a>Generally</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tag_name</span> &#123;</span></span><br><span class="line">	<span class="comment">// members</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>Note: Two of <code>tag_name</code>, <code>member-list</code> and <code>variable-list</code> must present.</p>
+<h3 id="Using-typedef"><a href="#Using-typedef" class="headerlink" title="Using typedef"></a>Using typedef</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">char</span> b;</span><br><span class="line">    <span class="keyword">double</span> c; </span><br><span class="line">&#125; Simple2;</span><br><span class="line"></span><br><span class="line"><span class="comment">//现在可以用Simple2作为类型声明新的结构体变量</span></span><br><span class="line">Simple2 u1, u2[<span class="number">20</span>], *u3;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">COMPLEX</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> <span class="built_in">string</span>[<span class="number">100</span>];</span><br><span class="line">    <span class="comment">// Other struct</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">SIMPLE</span> <span class="title">a</span>;</span></span><br><span class="line">    <span class="comment">// Pointer to itself</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">COMPLEX</span> *<span class="title">next_node</span>;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/C/">C</a></div>
+
+      
+  <div class="tags">
+<a href="/tags/c/">c</a><a href="/tags/struct/">struct</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article>
+</div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+  
+  
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>
+  
+  &copy; 2019 Larry Li
+  
+</p>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+
+
+<script src="/js/gallery.js"></script>
+
+
+
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+<script>
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>

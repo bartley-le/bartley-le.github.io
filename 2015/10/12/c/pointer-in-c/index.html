@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+<head>
+  <meta charset="utf-8">
+  
+  <title>Pointer in C | Larry&#39;s</title>
+  <meta name="author" content="Larry Li">
+
+  
+  <meta name="description" content="Define Pointer1int* ptr;
+
+This declares ptr as a pointer to int
+Operators
+* Operator
+Means “Pointer” when assignment and initialization.
+Means “Go To”">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="Larry&#39;s" type="application/atom+xml">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="p-name title" itemprop="headline name">Pointer in C</h1>
+  
+
+    <time class="dt-published" datetime="2015-10-12T00:00:00.000Z">
+  <span class="day">12</span><span class="month">Oct</span>
+</time>
+  </header>
+  <div class="e-content entry-content">
+    
+      <h2 id="Define-Pointer"><a href="#Define-Pointer" class="headerlink" title="Define Pointer"></a>Define Pointer</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* ptr;</span><br></pre></td></tr></table></figure>
+
+<p>This declares <code>ptr</code> as a pointer to <code>int</code></p>
+<h2 id="Operators"><a href="#Operators" class="headerlink" title="Operators"></a>Operators</h2><ul>
+<li><code>*</code> Operator<ol>
+<li>Means “Pointer” when assignment and initialization.</li>
+<li>Means “Go To” the address it stored.</li>
+</ol>
+</li>
+<li><code>&amp;</code> Operator<br>Means “Get Address”.</li>
+</ul>
+<p>Usage:</p>
+<ol>
+<li>Initialization</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i=<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span>* ptr = &amp;i;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Assignment</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> *ptr;</span><br><span class="line">ptr = &amp;i;</span><br></pre></td></tr></table></figure>
+
+<h2 id="List-Pointer"><a href="#List-Pointer" class="headerlink" title="List Pointer"></a>List Pointer</h2><p>Let’s take this as an example.<br>Notice that type of tha array <strong>must</strong> match that of the pointer.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line"><span class="keyword">int</span> *ptr;</span><br></pre></td></tr></table></figure>
+
+<p>Assign the address of <code>a[0]</code> to pointer <code>ptr</code>.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ptr = &amp;a[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
+
+<p>In C, this could be replaced by:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ptr = a;</span><br></pre></td></tr></table></figure>
+
+<p>Also, because elements in an array are continuous:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*(ptr+i) == a[i] == *(a+<span class="number">1</span>) <span class="comment">// True</span></span><br></pre></td></tr></table></figure>
+
+<p>Remind that <code>a</code> could not change, but <code>ptr</code> could change.</p>
+<h2 id="String-Pointer"><a href="#String-Pointer" class="headerlink" title="String Pointer"></a>String Pointer</h2><h2 id="Malloc-Function"><a href="#Malloc-Function" class="headerlink" title="Malloc Function."></a>Malloc Function.</h2>
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/C/">C</a></div>
+
+      
+  <div class="tags">
+<a href="/tags/c/">c</a><a href="/tags/pointer/">pointer</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article>
+</div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+  
+  
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>
+  
+  &copy; 2019 Larry Li
+  
+</p>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+
+
+<script src="/js/gallery.js"></script>
+
+
+
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+<script>
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>

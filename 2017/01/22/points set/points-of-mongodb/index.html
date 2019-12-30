@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+<head>
+  <meta charset="utf-8">
+  
+  <title>Points of MongoDb | Larry&#39;s</title>
+  <meta name="author" content="Larry Li">
+
+  
+  <meta name="description" content="NoSQL databaseMongoDb is a NoSQL database which is much more agile and flexible than relational databases.
+NoSQL vs SQL:
+
+Agile and flexible: schema i">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="Larry&#39;s" type="application/atom+xml">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="p-name title" itemprop="headline name">Points of MongoDb</h1>
+  
+
+    <time class="dt-published" datetime="2017-01-22T12:42:53.000Z">
+  <span class="day">22</span><span class="month">Jan</span>
+</time>
+  </header>
+  <div class="e-content entry-content">
+    
+      <h2 id="NoSQL-database"><a href="#NoSQL-database" class="headerlink" title="NoSQL database"></a>NoSQL database</h2><p>MongoDb is a NoSQL database which is much more agile and flexible than relational databases.</p>
+<p>NoSQL vs SQL:</p>
+<ul>
+<li>Agile and flexible: schema is not required, and easy to change. Which usually cause better performance</li>
+<li>Ability to scale-out (distribute the load among multiple servers)</li>
+<li>To handle large volumes of structured, semi-structured, and unstructured data</li>
+</ul>
+<p>Ref: <a href="https://www.sitepoint.com/sql-vs-nosql-differences/" target="_blank" rel="noopener">SQL vs NoSQL: The Differences</a></p>
+<h2 id="Terminologies"><a href="#Terminologies" class="headerlink" title="Terminologies"></a>Terminologies</h2><p><strong>Document</strong>: MongoDb stores data as <a href="http://bsonspec.org/" target="_blank" rel="noopener">BSON</a> documents<br><strong>Collection</strong>: analogous to an SQL table, to store a collection of documents</p>
+<h2 id="CRUD"><a href="#CRUD" class="headerlink" title="CRUD"></a>CRUD</h2><h3 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h3><p>SQL</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> book (</span><br><span class="line">  <span class="string">`ISBN`</span>, <span class="string">`title`</span>, <span class="string">`author`</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">VALUES</span> (</span><br><span class="line">  <span class="string">'9780992461256'</span>, </span><br><span class="line">  <span class="string">'Full Stack JavaScript'</span>, </span><br><span class="line">  <span class="string">'Colin Ihrig &amp; Adam Bretz'</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>MongoDb</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.book.insert(&#123;</span><br><span class="line">  ISBN: <span class="string">"9780992461256"</span>,</span><br><span class="line">  title: <span class="string">"Full Stack JavaScript"</span>,</span><br><span class="line">  author: <span class="string">"Colin Ihrig &amp; Adam Bretz"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Read"><a href="#Read" class="headerlink" title="Read"></a>Read</h3><p>SQL</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> title <span class="keyword">FROM</span> book</span><br><span class="line"><span class="keyword">WHERE</span> price &gt; <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<p>MongoDb</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.book.find(</span><br><span class="line">  &#123; <span class="attr">price</span>: &#123; &amp;gt;: <span class="number">10</span> &#125; &#125;,</span><br><span class="line">  &#123; <span class="attr">_id</span>: <span class="number">0</span>, <span class="attr">title</span>: <span class="number">1</span> &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><p>SQL</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> book</span><br><span class="line"><span class="keyword">SET</span> price = <span class="number">19.99</span></span><br><span class="line"><span class="keyword">WHERE</span> ISBN = <span class="string">'9780992461256'</span></span><br></pre></td></tr></table></figure>
+
+<p>MongoDb</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.book.update(</span><br><span class="line">  &#123; <span class="attr">ISBN</span>: <span class="string">'9780992461256'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">$set</span>: &#123; <span class="attr">price</span>: <span class="number">19.99</span> &#125; &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h3><p>SQL</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> book</span><br><span class="line"><span class="keyword">WHERE</span> publisher_id = <span class="string">'SP001'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>MongoDb</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.book.remove(&#123;</span><br><span class="line">  <span class="string">"publisher.name"</span>: <span class="string">"SitePoint"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/Points-Set/">Points-Set</a></div>
+
+      
+  <div class="tags">
+<a href="/tags/points-set/">points-set</a><a href="/tags/database/">database</a><a href="/tags/mongodb/">mongodb</a><a href="/tags/nosql/">nosql</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article>
+</div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+  
+  
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>
+  
+  &copy; 2019 Larry Li
+  
+</p>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+
+
+<script src="/js/gallery.js"></script>
+
+
+
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+<script>
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>

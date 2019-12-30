@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+<head>
+  <meta charset="utf-8">
+  
+  <title>Differences between Stack and Heap in C | Larry&#39;s</title>
+  <meta name="author" content="Larry Li">
+
+  
+  <meta name="description" content="In this article, I’d like to talk about the memory allocation in C.
+Static Storage AreaWhat is stored here?
+
+Global variables
+Static variables
+
+The sy">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="Larry&#39;s" type="application/atom+xml">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="p-name title" itemprop="headline name">Differences between Stack and Heap in C</h1>
+  
+
+    <time class="dt-published" datetime="2015-10-14T00:00:00.000Z">
+  <span class="day">14</span><span class="month">Oct</span>
+</time>
+  </header>
+  <div class="e-content entry-content">
+    
+      <p>In this article, I’d like to talk about the memory allocation in C.</p>
+<h2 id="Static-Storage-Area"><a href="#Static-Storage-Area" class="headerlink" title="Static Storage Area"></a>Static Storage Area</h2><p>What is stored here?</p>
+<ul>
+<li>Global variables</li>
+<li>Static variables</li>
+</ul>
+<p>The system would automatically cope with this, so it works steadily.</p>
+<h2 id="Stack-栈"><a href="#Stack-栈" class="headerlink" title="Stack(栈)"></a>Stack(栈)</h2><p>What is stored here?</p>
+<ul>
+<li>Local variables</li>
+<li>Memories allocated by function <code>alloca()</code></li>
+</ul>
+<p>Allocating stack memory is quite efficient, but the size is limited(default as 1M in VC6).</p>
+<p>Stack grows downwardly.</p>
+<p>Stack memory is freed automatically when a function returned.</p>
+<h2 id="Heap-堆"><a href="#Heap-堆" class="headerlink" title="Heap(堆)"></a>Heap(堆)</h2><p>What is stored here?</p>
+<ul>
+<li>Memories allocated by function <code>malloc()</code></li>
+</ul>
+<p>Heap grows upwardly.</p>
+<p>Heap needs to be freed manually by function <code>free()</code></p>
+<p>Using heap frequently would cause memory fragments, since they are not continuous.</p>
+
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/C/">C</a></div>
+
+      
+  <div class="tags">
+<a href="/tags/c/">c</a><a href="/tags/stack-heap/">stack&heap</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article>
+</div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+  
+  
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>
+  
+  &copy; 2019 Larry Li
+  
+</p>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+
+
+<script src="/js/gallery.js"></script>
+
+
+
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+<script>
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>

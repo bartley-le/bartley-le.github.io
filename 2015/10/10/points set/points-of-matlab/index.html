@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+<head>
+  <meta charset="utf-8">
+  
+  <title>Points of Matlab | Larry&#39;s</title>
+  <meta name="author" content="Larry Li">
+
+  
+  <meta name="description" content="Control Flowfor loop123for x= [initVal:step:endVal or valArray]    % bodyend
+
+Basic CalculationInequity Note, not “!=”
+1 ~= 2  % trueVariable assignme">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="Larry&#39;s" type="application/atom+xml">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="p-name title" itemprop="headline name">Points of Matlab</h1>
+  
+
+    <time class="dt-published" datetime="2015-10-10T00:00:00.000Z">
+  <span class="day">10</span><span class="month">Oct</span>
+</time>
+  </header>
+  <div class="e-content entry-content">
+    
+      <h2 id="Control-Flow"><a href="#Control-Flow" class="headerlink" title="Control Flow"></a>Control Flow</h2><h3 id="for-loop"><a href="#for-loop" class="headerlink" title="for loop"></a>for loop</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x= [initVal:step:endVal or valArray]</span><br><span class="line">    <span class="comment">% body</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Basic-Calculation"><a href="#Basic-Calculation" class="headerlink" title="Basic Calculation"></a>Basic Calculation</h2><p>Inequity <strong>Note, not “!=”</strong></p>
+<pre><code>1 ~= 2  % true</code></pre><p>Variable assignment:</p>
+<pre><code>a = 3; % semicolon suppresses output</code></pre><p>Displaying them:</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">pi</span></span><br><span class="line"><span class="built_in">disp</span>(a)</span><br><span class="line"><span class="built_in">disp</span>(sprintf(<span class="string">'2 decimals: %0.2f'</span>, a))</span><br><span class="line"><span class="built_in">disp</span>(sprintf(<span class="string">'6 decimals: %0.6f'</span>, a))</span><br><span class="line">format long</span><br><span class="line">a</span><br><span class="line">format short</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+
+<h2 id="Matrix-Calculation"><a href="#Matrix-Calculation" class="headerlink" title="Matrix Calculation"></a>Matrix Calculation</h2><h3 id="1-To-create-a-matrix"><a href="#1-To-create-a-matrix" class="headerlink" title="1. To create a matrix:"></a>1. To create a matrix:</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="number">1</span> <span class="number">2</span>; <span class="number">3</span> <span class="number">4</span>; <span class="number">5</span> <span class="number">6</span>]</span><br><span class="line"></span><br><span class="line">B = [<span class="number">1</span> <span class="number">2</span>;</span><br><span class="line">	 <span class="number">3</span> <span class="number">4</span>;</span><br><span class="line">	 <span class="number">5</span> <span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+
+<p>Or using a built-in function</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ones</span>(row, col)  <span class="comment">% same as C = [2 2 2; 2 2 2]</span></span><br><span class="line"><span class="built_in">zeros</span>(row, col)</span><br><span class="line"><span class="built_in">rand</span>(row, col)  <span class="comment">% from a uniform distribution (range [0, 1])</span></span><br><span class="line"><span class="built_in">randn</span>(row, col) <span class="comment">% from a normal distribution (mean=0, var=1)</span></span><br><span class="line"><span class="built_in">eye</span>(row)        <span class="comment">% 4x4 identity matrix</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Get-informations-from-matrix"><a href="#2-Get-informations-from-matrix" class="headerlink" title="2. Get informations from matrix"></a>2. Get informations from matrix</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">size</span>(M)    <span class="comment">% return a 1x2 matrix: [(number of rows) (number of columns)]</span></span><br><span class="line"><span class="built_in">size</span>(M,<span class="number">1</span>)  <span class="comment">% number of rows</span></span><br><span class="line"><span class="built_in">size</span>(M,<span class="number">2</span>)  <span class="comment">% number of cols</span></span><br><span class="line"><span class="built_in">length</span>(M)  <span class="comment">% size of longest dimension</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Manipulating-matrix"><a href="#3-Manipulating-matrix" class="headerlink" title="3. Manipulating matrix"></a>3. Manipulating matrix</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% indexing</span></span><br><span class="line">A(<span class="number">3</span>,<span class="number">2</span>)  <span class="comment">% indexing is (row,col)</span></span><br><span class="line">A(<span class="number">2</span>,:)  <span class="comment">% ":" means every element along that dimension</span></span><br><span class="line">A([<span class="number">1</span> <span class="number">3</span>],:) <span class="comment">% print all  the elements of rows 1 and 3</span></span><br><span class="line"></span><br><span class="line">A(:,<span class="number">2</span>) = [<span class="number">10</span>; <span class="number">11</span>; <span class="number">12</span>]     <span class="comment">% change second column</span></span><br><span class="line">A = [A, [<span class="number">100</span>; <span class="number">101</span>; <span class="number">102</span>]]; <span class="comment">% append column vec</span></span><br><span class="line">A(:) <span class="comment">% Select all elements as a column vector.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% Putting data together </span></span><br><span class="line"><span class="comment">% (A &amp; B are matrics posessing same dims)</span></span><br><span class="line">C = [A B] or [A,B]        <span class="comment">% concatenating A and B matrices side by side</span></span><br><span class="line">C = [A; B]                <span class="comment">% Concatenating A and B top and bottom</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Plotting"><a href="#Plotting" class="headerlink" title="Plotting"></a>Plotting</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">w = <span class="number">-6</span> + <span class="built_in">sqrt</span>(<span class="number">10</span>)*(<span class="built_in">randn</span>(<span class="number">1</span>,<span class="number">10000</span>))  <span class="comment">% (mean = -6, var = 10)</span></span><br><span class="line">hist(w)     <span class="comment">% plot histogram using 10 bins (default)</span></span><br><span class="line">hist(w,<span class="number">50</span>)  <span class="comment">% plot histogram using 50 bins</span></span><br></pre></td></tr></table></figure>
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/Points-Set/">Points-Set</a></div>
+
+      
+  <div class="tags">
+<a href="/tags/points-set/">points-set</a><a href="/tags/matlab/">matlab</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article>
+</div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+  
+  
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>
+  
+  &copy; 2019 Larry Li
+  
+</p>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+
+
+<script src="/js/gallery.js"></script>
+
+
+
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+<script>
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>
