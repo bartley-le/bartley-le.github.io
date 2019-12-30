@@ -6,6 +6,7 @@ categories: Machine Learning
 tags: 
 - machine learning
 - linear regression
+mathjax: true
 ---
 
 Linear regression is used when predicting numeric output from numeric input that has linear relationship.
@@ -40,29 +41,29 @@ For convenience, define $x_0=1$ (to use matrix for calculation).
 ## Cost Function
 
 ### Squared Error
-{% math %}
+$
 J(\theta) = \frac{1}{m}\displaystyle\sum_{i=1}^m{Cost(h_\theta(x^{(i)}), y^{(i)})}
 
-{% endmath %}
+$
 
-{% math %}
+$
 Cost(h_\theta(x), y)=\frac{1}{2}(h_\theta(x)-y)^2
 
-{% endmath %}
+$
 
 ## Optimization
 ### Derivative for [Gradient Descent](/2016/10/21/machine-learning/gradient-descent)
 
-{% math %}
+$
 \frac{d}{d\theta_j}J(\theta)=\frac{1}{m}\displaystyle\sum_{i=1}^m{(h_\theta(x^{(i)})-y^{(i)})x^{(i)}_j}
 
-{% endmath %}
+$
 
 Update $\theta$:
-{% math %}
+$
 \theta_j = \theta_j -\frac{\alpha}{m}\displaystyle\sum_{i=1}^m{(h_\theta(x^{(i)})-y^{(i)})x^{(i)}_j}
 
-{% endmath %}
+$
 
 Vectorized implementation:
 

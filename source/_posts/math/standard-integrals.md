@@ -6,6 +6,7 @@ categories: Math
 tags: 
 - math
 - integral
+mathjax: true
 ---
 
 | Derivative  | Expression | Integral |

@@ -7,6 +7,7 @@ tags:
 - machine learning
 - classification
 - logistic regression
+mathjax: true
 ---
 
 
@@ -38,11 +39,11 @@ Just create new features to fit.
 
 ## Cost Function
 
-{% math %}
+$
 J(\theta) = \frac{1}{m} \sum_{i=1}^m \mathrm{Cost}(h_\theta(x^{(i)}),y^{(i)})
 
-{% endmath %}
-{% math %}
+$
+$
 \begin{eqnarray}
 Cost(h_\theta(x),y) =
 \begin{cases}
@@ -51,13 +52,13 @@ Cost(h_\theta(x),y) =
 \end{cases}
 =-y\log(h_\theta(x)) - (1 - y)\log(1 - h_\theta(x))
 \end{eqnarray}
-{%endmath%}
+$
 
 Vectorized version:
 
-{% math %}
+$
 J(\theta)  =  -\frac{1}{m}(\log(g(X\theta))^{T}y+\log(1-g(X\theta))^{T}(1-y))
-{% endmath %}
+$
 
 
 
@@ -70,23 +71,23 @@ If using squared error on sigmoid function, it will be non-convex, so that we ca
 ## Optimization
 ### Derivative for Gradient Descent
 It looks identical to linear regression
-{% math %}
+$
 \frac{d}{d\theta_j}J(\theta)=\frac{1}{m}\displaystyle\sum_{i=1}^m{(h_\theta(x^{(i)})-y^{(i)})x^{(i)}_j}
 
-{% endmath %}
+$
 
-{% math %}
+$
 J(\theta_0,\theta_1,\theta_2, ...) = \frac{1}{m}\displaystyle\sum_{i=1}^m{Cost(h_\theta(x^{(i)}), y^{(i)})}+\frac{\lambda}{2m}\displaystyle\sum_{j=1}^n{\theta^2_j}
 
-{% endmath %}
+$
 
 ($\lambda$ is [regularization](/2016/10/21/machine-learning/introduction-to-machine-learning/#Overfitting) parameter)
 
 Update $\theta$:
-{% math %}
+$
 \theta_j = \theta_j -\frac{\alpha}{m}\displaystyle\sum_{i=1}^m{(h_\theta(x^{(i)})-y^{(i)})x^{(i)}_j}
 
-{% endmath %}
+$
 Vectorized implementation:
 
 $$

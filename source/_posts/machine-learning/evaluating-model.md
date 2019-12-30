@@ -5,6 +5,7 @@ date: 2016-10-27 12:16:00
 categories: Machine Learning
 tags:
 - machine learning
+mathjax: true
 ---
 
 ## Summary

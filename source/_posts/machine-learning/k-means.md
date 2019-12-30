@@ -7,6 +7,7 @@ tags:
 - machine learning
 - clustering
 - k-means
+mathjax: true
 ---
 
 K-Means algorithm is an unsupervised clustering algorithm.

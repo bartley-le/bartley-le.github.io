@@ -7,6 +7,7 @@ tags:
 - math
 - integral
 - differential equations
+mathjax: true
 ---
 
 # First order

@@ -6,13 +6,14 @@ categories: Machine Learning
 tags:
 - machine learning
 - support vector machine
+mathjax: true
 ---
 
 ## Cost Function
-{% math %}
+$
 J_\Theta=C\sum{[y * cost_1(\Theta^TX)+(1-y) * cost_0(\Theta^TX)]}+\frac{1}{2} * \sum{\Theta^2}
 
-{% endmath %}
+$
 
 Differences with logistic cost function:
 - Replace $sigmoid()$ with $cost_1()$ and $cost_0()$
@@ -24,8 +25,8 @@ SVM will maximize the margin to allow variance in test data. Also, it will ignor
 
 Math behind: Since $cost_1$ and $cost_0$ requires $\Theta'*X$ to be significant, and regularization requires $||\Theta||$ to be small, $||projection X \rightarrow \Theta||$ would be large, which is the margin.
 
-({%math%}\Theta'* X = X' * \Theta' =  ||projection X \rightarrow \Theta||* ||\Theta||
-{%endmath%})
+($\Theta'* X = X' * \Theta' =  ||projection X \rightarrow \Theta||* ||\Theta||
+$)
 
 (`||x||` denotes the length of vector, and it can be negative)
 

@@ -6,6 +6,7 @@ categories: Math
 tags: 
 - math
 - trigonometric identities
+mathjax: true
 ---
 
 ## Basic Definitions

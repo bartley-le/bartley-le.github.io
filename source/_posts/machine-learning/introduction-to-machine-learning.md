@@ -5,6 +5,7 @@ date: 2016-10-21 19:24:16
 categories: Machine Learning
 tags:
 - machine learning
+mathjax: true
 ---
 
 # Online Courses for machine learning

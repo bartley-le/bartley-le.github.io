@@ -9,6 +9,7 @@ tags:
 - machine learning
 - classification
 - neural network
+mathjax: true
 ---
 
 Neuron network is about mimicking the brain. Our brain can learn anything with one algorithm ("one learning algorithm" hypothesis, re-wiring test).
@@ -60,7 +61,7 @@ where $a'=a^{(i)}.*(1-a^{(i)})$
 
 ## Random Initialization
 To make each neuron unit get different features, we should initialize the $\Theta$ randomly (in $[-\epsilon, \epsilon]$).
-A good choice of $\epsilon$ is {%math%}\epsilon=\frac{\sqrt{6}}{\sqrt{L_{in}+L_{out}}}{%endmath%}
+A good choice of $\epsilon$ is $\epsilon=\frac{\sqrt{6}}{\sqrt{L_{in}+L_{out}}}$
 
 # Notations
 - $a^{(i)}_j$: "activation"(output) of unit $j$ in layer $i$

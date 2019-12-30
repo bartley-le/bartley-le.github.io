@@ -6,6 +6,7 @@ categories: Math
 tags:
 - math
 - matrix
+mathjax: true
 ---
 ## Basic
 
@@ -68,7 +69,7 @@ $$
 
 ### Matrix * vector
 
-{% math %}
+$
 \begin{bmatrix}
 a & b \\
 c & d \\
@@ -83,11 +84,11 @@ ax + by\\\\
 cx + dy\\\\
 ex + fy
 \end{bmatrix}
-{% endmath %}
+$
 
-{% math %}
+$
 ([m*n]*[n*1] = [m*1])
-{% endmath %}
+$
 
 ### Matrix * matrix
 
@@ -149,4 +150,4 @@ $$
 
 In other words:
 
-{% math %}A_{ij} = A^T_{ji}{% endmath %}
+$A_{ij} = A^T_{ji}$

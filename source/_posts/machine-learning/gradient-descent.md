@@ -6,6 +6,7 @@ categories: Machine Learning
 tags: 
 - machine learning
 - gradient descent
+mathjax: true
 ---
 
 ## How Gradient Descent Works?
@@ -41,10 +42,10 @@ $$
 ## Gradient Checking (numerical gradient)
 To identify/debug error(usually back-propagation in neural network), we need to check whether the gradient is calculated correctly. (Should not be on when learning)
 
-{% math %}
+$
 \frac{d}{d\Theta_i}J(\Theta)\approx \frac{J(\Theta_i+\epsilon, \Theta_{rest})-J(\Theta_i-\epsilon, \Theta_{rest})}{2\epsilon}
 
-{% endmath %}
+$
 
 usually with $\epsilon=10^{-4}$
 

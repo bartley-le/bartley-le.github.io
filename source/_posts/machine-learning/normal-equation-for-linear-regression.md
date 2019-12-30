@@ -7,6 +7,7 @@ tags:
 - machine learning
 - normal equation
 - linear regression
+mathjax: true
 ---
 
 ## How Normal Equation Works?

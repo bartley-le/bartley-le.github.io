@@ -5,6 +5,7 @@ date: 2016-11-15 15:17:11
 categories: Machine Learning
 tags:
 - machine learning
+mathjax: true
 ---
 
 Collarborative filtering is used to learn both parameter $\Theta$ and input $x$ from $y$ at the same time.
