@@ -78,10 +78,23 @@ Being a particle:
 OBJECT → * | そう (这样) | 初め (初次)
 WOMAN → OBJECT | OBJECT ちゃん
 MAN → OBJECT | OBJECT さん
-PRONOUN → {% ruby これ|this %} | {% ruby それ|(near) that %} | {% ruby あれ|(far) that %} | {% ruby 誰|who %} | {% ruby 何|what %} | {% ruby どれ|which %} | {% ruby どじる|which one of two %}
+PRONOUN → {% ruby これ|this %} | {% ruby それ|(near) that %} | {% ruby あれ|(far) that %} | {% ruby ここ|here %} | {% ruby そこ|(near) there %} | {% ruby あそこ|(far) there %} | {% ruby 誰|who %} | {% ruby 何|what %} | {% ruby どれ|which %} | {% ruby どじる|which one of two %}
 THING → OBJECT | OBJECT の (OBJECT)
 NOUN → WOMAN | MAN | THING | PRONOUN
 
+Pronoun memorisation
+- Representing distance
+  - こ＝此
+  - そ＝其
+  - あ｜あそ＝彼
+- Representing topic
+  - れ~=个
+  - こ＝処
+
+### Numbers
+> NOTE
+> the character after {% ruby 三|さん %} will become voiced. E.g. さんびゃく not さんひゃく
+> the character after {% ruby 六|ろっ %} and {% ruby 八|はっ %} will become voiced. E.g. さんびゃく not さんひゃく
 
 ### Declarative
 
@@ -109,8 +122,9 @@ Meeting for the first time
 
 See [this post](https://zhuanlan.zhihu.com/p/67570558).
 
-{% ruby 初めますて|for the first time %}
-{% ruby どうぞ|please %}、{% ruby よろしく|nice to meet you %}　{% ruby お願いします|please %}
+> {% ruby 初めますて|for the first time %} 
+
+> {% ruby どうぞ|please %}、{% ruby よろしく|nice to meet you %}　{% ruby お願いします|please %}
 
 
 {% ruby ええ|yes %} {% ruby はい|yes %}
@@ -118,5 +132,15 @@ See [this post](https://zhuanlan.zhihu.com/p/67570558).
 [Prefix お and ご](http://selftaughtjapanese.com/2014/03/21/japanese-honorific-prefixes-お-and-ご-o-and-go/)
 
 [Pronounciation of はへを](https://japanese.stackexchange.com/questions/379/why-are-the-particles-は-ha⇒wa-へ-he⇒e-and-を-wo⇒o-not-spelled-phonet)
+
+## Typing Guide
+
+### How to type small ャ ゅ ょ
+They must be after a い consonant. To type it, omit the `i` in the consonant.
+E.g. {% ruby きゃ|kya %}, {% ruby しゅ|syu %}, {% ruby ちょ|tyo%}
+
+### How to type small っ
+Repeat the consonant of the next character.
+E.g. ろっ{% ruby ぴゃ|ppya %}く, か{% ruby った|tta %}
 
 TODO: Work in progress
